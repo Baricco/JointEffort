@@ -10,7 +10,7 @@ public class Main {
         do {
         double a = 0, b = 0, ris;
         char op = ' ';
-        System.out.println("Inserire l'operazione che si desidera fare utilizzando questa \"sintassi\": num1 op num2");
+        System.out.println("Inserire l'espressione che si desidera risolvere utilizzando questa \"sintassi\": num1 op num2");
         expression = scanner.nextLine();
         var = false;
         try { stringManager(expression, a, b, op); } catch (InvalidUserInputException e) { System.out.println("L'input inserito non è corretto, usare la sintassi corretta"); var = true; }
@@ -31,16 +31,16 @@ public class Main {
             if (string.charAt(i) == ' ') { index = i; break; }
             operator += string.charAt(i);
         }
-        if (operator.length() > 1) // throw InvalidUserInputException; bisogna implementare questa eccezione
+        if (operator.length() > 1) throw new InvalidUserInputException();
         
         for (int i = index; i < string.length(); i++) {
             if (string.charAt(i) >= 48 && string.charAt(i) < 58) num2 += string.charAt(i);
             else if (string.charAt(i) == ' ') break;
-            //else throw InvalidUserInputException; bisogna implementare questa eccezione
+            else throw new InvalidUserInputException();
         }   
         
-        a = Integer.parseInt(num1);
-        b = Integer.parseInt(num2);
+        a = Double.parseDouble(num1);
+        b = Double.parseDouble(num2);
         op = operator.charAt(0);
     }
 }
