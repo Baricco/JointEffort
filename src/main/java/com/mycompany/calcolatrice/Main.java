@@ -25,7 +25,7 @@ public class Main {
             if (string.charAt(i) >= 48 && string.charAt(i) < 58) num1 += string.charAt(i);
             else if (string.charAt(i) == ' ') { index = i; break; }
             else throw new InvalidUserInputException();
-        }      
+        }
         
         for (int i = index; i < string.length(); i++) {
             if (string.charAt(i) == ' ') { index = i; break; }
