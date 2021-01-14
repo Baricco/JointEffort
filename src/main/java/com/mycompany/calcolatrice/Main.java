@@ -13,7 +13,7 @@ public class Main {
         System.out.println("Inserire l'espressione che si desidera risolvere utilizzando questa \"sintassi\": num1 op num2");
         expression = scanner.nextLine();
         var = false;
-        try { stringManager(expression, a, b, op); } catch (InvalidUserInputException e) { System.out.println("L'input inserito non è corretto, usare la sintassi corretta"); var = true; }
+        try { stringManager(expression, a, b, op); } catch (InvalidUserInputException e) { System.out.println("L'input inserito non Ã¨ corretto, usare la sintassi corretta"); var = true; }
         } while(var);
     }
     
