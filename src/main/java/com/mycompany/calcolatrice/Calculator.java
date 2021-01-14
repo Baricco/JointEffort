@@ -17,7 +17,7 @@ public class Calculator {
             case '-': ris = subtraction(a, b); break;       //questa funzione la deve aggiungere Ivan
             case '*': ris = multiplication(a, b); break;
             case '/': ris = division(a, b); break;
-            case '%': ris = modulo(a, b); break;            //questa funzione la deve scrivere il Pici
+            case '%': ris = modulo(a, b); break;            
             default: System.out.println("Errore nella gestione dell'operatore"); return;
         }
         System.out.println(a + " " + op + " " + b + " = " + ris);
@@ -28,4 +28,7 @@ public class Calculator {
     public double multiplication(double a, double b){ return a * b; }
     
     public double sum(double a, double b) { return a + b; }
+    
+    public double modulo(double a, double b){ return a % b; }
 }
+
