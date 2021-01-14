@@ -1,6 +1,4 @@
 package com.mycompany.calcolatrice;
- 
-import java.util.*;
         
 public class Calculator {
     double a, b;
@@ -12,8 +10,8 @@ public class Calculator {
         this.op = op;
     }
     
-    public double division(double a, double b) { return a/b; }
+    public double division(double a, double b) { return a / b; }
     
-    public double multiplication(double a, double b){return a*b;}
+    public double multiplication(double a, double b){ return a * b; }
     
 }
