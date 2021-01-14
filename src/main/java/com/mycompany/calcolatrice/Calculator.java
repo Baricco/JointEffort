@@ -10,7 +10,7 @@ public class Calculator {
         this.op = op;
     }
     
-    public void calculate(double a, double b, char op) {
+    public void calculate() {
         double ris = 0;
         switch(op) {
             case '+': ris = sum(a, b); break;
@@ -23,12 +23,12 @@ public class Calculator {
         System.out.println(a + " " + op + " " + b + " = " + ris);
     }
     
-    public double division(double a, double b) { return a / b; }
+    private double division(double a, double b) { return a / b; }
     
-    public double multiplication(double a, double b){ return a * b; }
+    private double multiplication(double a, double b){ return a * b; }
     
-    public double sum(double a, double b) { return a + b; }
+    private double sum(double a, double b) { return a + b; }
     
-    public double modulo(double a, double b){ return a % b; }
+    private double modulo(double a, double b){ return a % b; }
 }
 

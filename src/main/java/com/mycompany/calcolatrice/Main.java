@@ -7,14 +7,23 @@ public class Main {
         String expression;
         Scanner scanner = new Scanner(System.in);
         boolean var = false;
+       Calculator calcolatrice;
         do {
         double a = 0, b = 0, ris;
         char op = ' ';
         System.out.println("Inserire l'espressione che si desidera risolvere utilizzando questa \"sintassi\": num1 op num2");
         expression = scanner.nextLine();
         var = false;
-        try { stringManager(expression, a, b, op); } catch (InvalidUserInputException e) { System.out.println("L'input inserito non è corretto, usare la sintassi corretta"); var = true; }
+        try { stringManager(expression, a, b, op); } catch (InvalidUserInputException e) { System.out.println("L'input inserito non Ã¨ corretto, usare la sintassi corretta"); var = true; }
+        calcolatrice=new Calculator(a,b,op);
         } while(var);
+         
+      calcolatrice.calculate();
+      
+     
+      
+        
+        
     }
     
     public static void stringManager(String string, double a, double b, char op) throws InvalidUserInputException {
@@ -38,8 +47,8 @@ public class Main {
             else num2 += string.charAt(i);
         }
         
-        try { a = Double.parseDouble(num1); } catch (Exception e) { throw new InvalidUserInputException(); }
-        try { b = Double.parseDouble(num2); } catch (Exception e) { throw new InvalidUserInputException(); }
+        try { a = Double.parseDouble(num1); } catch (NumberFormatException e) { throw new InvalidUserInputException(); }
+        try { b = Double.parseDouble(num2); } catch (NumberFormatException e) { throw new InvalidUserInputException(); }
         op = operator.charAt(0);
     }
 }
