@@ -34,14 +34,12 @@ public class Main {
         if (operator.length() > 1) throw new InvalidUserInputException();
         index++;
         for (int i = index; i < string.length(); i++) {
-            if (string.charAt(i) == ' ') { index = i; break; }
+            if (string.charAt(i) == ' ') break;
             else num2 += string.charAt(i);
         }
         
         try { a = Double.parseDouble(num1); } catch (Exception e) { throw new InvalidUserInputException(); }
         try { b = Double.parseDouble(num2); } catch (Exception e) { throw new InvalidUserInputException(); }
         op = operator.charAt(0);
-        
-       
     }
 }
