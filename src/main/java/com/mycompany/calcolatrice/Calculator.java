@@ -1,0 +1,31 @@
+package com.mycompany.calcolatrice;
+        
+public class Calculator {
+    double a, b;
+    char op;
+    
+    public Calculator(double a, double b, char op) { 
+        this.a = a;
+        this.b = b;
+        this.op = op;
+    }
+    
+    public void calculate(double a, double b, char op) {
+        double ris = 0;
+        switch(op) {
+            case '+': ris = sum(a, b); break;
+            case '-': ris = subtraction(a, b); break;       //questa funzione la deve aggiungere Ivan
+            case '*': ris = multiplication(a, b); break;
+            case '/': ris = division(a, b); break;
+            case '%': ris = modulo(a, b); break;            //questa funzione la deve scrivere il Pici
+            default: System.out.println("Errore nella gestione dell'operatore"); return;
+        }
+        System.out.println(a + " " + op + " " + b + " = " + ris);
+    }
+    
+    public double division(double a, double b) { return a / b; }
+    
+    public double multiplication(double a, double b){ return a * b; }
+    
+    public double sum(double a, double b) { return a + b; }
+}
