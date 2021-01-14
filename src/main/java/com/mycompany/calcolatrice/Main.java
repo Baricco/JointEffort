@@ -21,26 +21,27 @@ public class Main {
         String num1 = "", num2 = "", operator = "";
         int index = 0;
         
-        for (int i = index; i < string.length(); i++) {
-            if (string.charAt(i) >= 48 && string.charAt(i) < 58) num1 += string.charAt(i);
-            else if (string.charAt(i) == ' ') { index = i; break; }
-            else throw new InvalidUserInputException();
-        }
         
+        for (int i = index; i < string.length(); i++) {
+            if (string.charAt(i) == ' ') { index = i; break; }
+            else num1 += string.charAt(i);
+        }
+        index++;
         for (int i = index; i < string.length(); i++) {
             if (string.charAt(i) == ' ') { index = i; break; }
             operator += string.charAt(i);
         }
         if (operator.length() > 1) throw new InvalidUserInputException();
-        
+        index++;
         for (int i = index; i < string.length(); i++) {
-            if (string.charAt(i) >= 48 && string.charAt(i) < 58) num2 += string.charAt(i);
-            else if (string.charAt(i) == ' ') break;
-            else throw new InvalidUserInputException();
-        }   
+            if (string.charAt(i) == ' ') { index = i; break; }
+            else num2 += string.charAt(i);
+        }
         
-        a = Double.parseDouble(num1);
-        b = Double.parseDouble(num2);
+        try { a = Double.parseDouble(num1); } catch (Exception e) { throw new InvalidUserInputException(); }
+        try { b = Double.parseDouble(num2); } catch (Exception e) { throw new InvalidUserInputException(); }
         op = operator.charAt(0);
+        
+       
     }
 }
