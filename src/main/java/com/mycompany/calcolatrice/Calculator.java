@@ -1,5 +1,7 @@
 package com.mycompany.calcolatrice;
-
+ 
+import java.util.*;
+        
 public class Calculator {
     double a, b;
     char op;
@@ -10,7 +12,6 @@ public class Calculator {
         this.op = op;
     }
     
-    //mura somma
-    //
+    public double division(double a, double b) { return a/b; }
     
 }
