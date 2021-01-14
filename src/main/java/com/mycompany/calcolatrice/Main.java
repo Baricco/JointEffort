@@ -8,7 +8,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         boolean var = false;
         do {
-        int a = 0, b = 0, ris;
+        double a = 0, b = 0, ris;
         char op = ' ';
         System.out.println("Inserire l'operazione che si desidera fare utilizzando questa \"sintassi\": num1 op num2");
         expression = scanner.nextLine();
@@ -17,7 +17,7 @@ public class Main {
         } while(var);
     }
     
-    public static void stringManager(String string, int a, int b, char op) throws InvalidUserInputException {
+    public static void stringManager(String string, double a, double b, char op) throws InvalidUserInputException {
         String num1 = "", num2 = "", operator = "";
         int index = 0;
         
